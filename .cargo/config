@@ -1,0 +1,11 @@
+[build]
+target = "./riscv64ia-unknown-none-elf.json"
+
+[target.riscv64ia-unknown-none-elf]
+runner = "qemu-system-riscv64 -nographic -machine virt -bios"
+rustflags = [
+  "-C", "link-arg=-Tlink.ld",
+]
+
+[unstable]
+build-std = ["core"]
